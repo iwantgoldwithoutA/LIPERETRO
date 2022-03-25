@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "namelists",
+  "info": {
+    "name": "namelist",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    }
+  }
+}
