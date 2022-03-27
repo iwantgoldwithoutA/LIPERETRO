@@ -28,13 +28,7 @@ export default function Statuspackage() {
       />
       <div className="backgrand-status1">
         <h1 className="Text-status">STATUS</h1>
-
-        {localStorage.getItem("is_auth") ? (
-          <>
-            {data.map((item) => {
-          return (
             <div>
-              {console.log(item)}
               <p className="status-border">
                 <div className="Box-Usename1">
                   <div className="Box-Usename2">
@@ -89,13 +83,6 @@ export default function Statuspackage() {
               </p>
               
             </div>
-          );
-        })}
-          </>
-        ):(
-        <>
-          <ButtonLogin/>
-        </>)}
 
         
         <div className="home1">
