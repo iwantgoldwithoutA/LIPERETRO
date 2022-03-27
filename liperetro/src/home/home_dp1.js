@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import './Home.css';
 
-const Home_disp = (props) => {
+const Home_disp1 = (props) => {
     console.log(props)
   const [popup, setPopup] = useState(false);
 
@@ -14,7 +14,7 @@ const Home_disp = (props) => {
     <>
       <img
         className="box0"
-        src={`http://localhost:1337${[props.item.Image.url]}`}
+        src='https://thailand-directory.com/wp-content/uploads/2021/09/kla-aphimuk-YJ7U1JfB6VE-unsplash-scaled.jpg'
         alt=""
         onClick={toggleShowDialog}
         style={{
@@ -30,14 +30,13 @@ const Home_disp = (props) => {
         style={{color: 'rgb(68, 68, 68)',
                 fontFamily: 'Mitr, sans-serif'}}>
           <Modal.Header closeButton onClick={toggleShowDialog} style={{color:'#E4FCFD',backgroundColor:'#6AB7D6'}}>
-            <Modal.Title style={{fontSize:32}}>{props.item.Name}</Modal.Title>
+            <Modal.Title style={{fontSize:32}}>Koh Adang-Rawi</Modal.Title>
           </Modal.Header>
 
           <Modal.Body style={{backgroundColor:'#FAFAEB'}}>
-            <p>{props.item.Detail}</p>
-            {console.log(props.item.Detail)}
+            <p>Koh Adang-Rawi is a real paradise island located in the middle of the Tarutao Marine National Park. There are many things to do on a visit to Koh Adang-Rawi! In addition to the beautiful beaches and great snorkeling spots, you can also take a hike to the famous Koh Lipe Viewpoint.</p>
             <img
-              src={`http://localhost:1337${props.item.Image.url}`}
+              src='https://thailand-directory.com/wp-content/uploads/2021/09/kla-aphimuk-YJ7U1JfB6VE-unsplash-scaled.jpg'
               className="img-fluid"
               style={{borderRadius:'20px'}}
             />
@@ -59,4 +58,4 @@ const Home_disp = (props) => {
   );
 };
 
-export default Home_disp;
+export default Home_disp1;

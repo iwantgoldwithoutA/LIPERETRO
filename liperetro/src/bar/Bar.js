@@ -45,30 +45,26 @@ function LRbar() {
                         Package
                     </Link>
                 </li>
-                {localStorage.getItem("is_auth") ? (
+                
                      <li className='nav-item'>
                      <Link onClick={() => {localStorage.clear();window.location.refresh(false)} } to='/' className="nav-links-mobile" >
                          Log out <i className='fas fa-right-from-bracket'/>
                      </Link>
                  </li>
-                ):(<> </>)}
+                
                
             </ul>
-            {localStorage.getItem("is_auth") ? (
+            
                 <>
                      <li className='nav-item-user'>
                
                      <div>
-                         {localStorage.getItem("UsernameDP")} <i className="fas fa-user"/>
+                         Mark <i className="fas fa-user"/>
                      </div>
                  </li>
                  <ButtonLogout/>
                  </>
-                 
-                    ):(
-                 <ButtonLogin/> 
-                 ) 
-                }
+                
         </nav>
     )
 }
