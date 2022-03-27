@@ -27,7 +27,7 @@ function Package1999() {
             <div className='backgrand-status2'>
                 <br />
                 <div className="pics">
-                    <img src={require('./piengpor.jpg')} />
+                    <img src='https://www.chillpainai.com/src/wewakeup/img_hotels/3211/1487070806-_MG_9750.JPG' />
                 </div>
 
                 <p className='description'>

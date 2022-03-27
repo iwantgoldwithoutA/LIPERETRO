@@ -51,14 +51,14 @@ export default function Statuspackage() {
                     <h2>Hotel</h2>
                     <h5 className="NameHotel">Lipe Beach Resort</h5>
                     <img
-                      src={require('./Lipe Beach Resort.jpg')}
+                      src='https://media-cdn.tripadvisor.com/media/photo-s/06/f2/84/d7/lipe-beach-resort.jpg'
                     ></img>
                   </div>
                   <div className="Meal">
                     <h2>Meal</h2>
                     <h5 className="NameMeal">Beef Bulgare</h5>
                     <img
-                      src={require('./BeefBulgare.jpg')}
+                      src='https://www.centarahotelsresorts.com/centaragrand/sites/g/files/yplzxh121/files/2022-01/Centara%20Ladprao_Blue%20Sky%20_Mix%20Grill%20Australian%20beef.jpg'
                     ></img>
                   </div>
                 </div>
@@ -76,7 +76,7 @@ export default function Statuspackage() {
                 <div className="Paidstatus">PAID</div>
                 <div className="Evidence1">
                   <h2 className="Evidence">Evidence</h2>
-                  <img src={require('./slip.jpg')}></img>
+                  <img src='https://www.microsuck.net/wp-content/uploads/2019/09/1-592x1024.png'/>
                 </div>
 
                 <div className="Total1">
