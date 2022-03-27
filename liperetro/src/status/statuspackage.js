@@ -43,45 +43,45 @@ export default function Statuspackage() {
                       {localStorage.getItem("UsernameDP")}
                     </h2>
                   </div>
-                  <h2 className="Package-status">{item.packages[0].NamePac}</h2>
+                  <h2 className="Package-status">Package 3999</h2>
                 </div>
 
                 <div className="Box-H-M">
                   <div className="Hotel">
                     <h2>Hotel</h2>
-                    <h5 className="NameHotel">{item.hotels[0].Name}</h5>
+                    <h5 className="NameHotel">Lipe Beach Resort</h5>
                     <img
-                      src={`http://localhost:1337${item.hotels[0].Image[0].url}`}
+                      src={require('./Lipe Beach Resort.jpg')}
                     ></img>
                   </div>
                   <div className="Meal">
                     <h2>Meal</h2>
-                    <h5 className="NameMeal">{item.foods[0].Coursename}</h5>
+                    <h5 className="NameMeal">Beef Bulgare</h5>
                     <img
-                      src={`http://localhost:1337${item.foods[0].Image[0].url}`}
+                      src={require('./BeefBulgare.jpg')}
                     ></img>
                   </div>
                 </div>
 
                 <h1 className="topic-Additional">Additional:</h1>
                 <div className="text-additional">
-                  <div className="Additional">{item.Additional}</div>
+                  <div className="Additional">แพ้กุ้ง แพ้หอยนางรม</div>
                 </div>
 
                 <h1 className="topic-Adult">Person</h1>
-                <div className="person-num">{item.Person} Person</div>
+                <div className="person-num">1 Person</div>
 
                 
                 <h1 className="topic-Status">Payment Status</h1>
-                <div className="Paidstatus">{item.status}</div>
+                <div className="Paidstatus">PAID</div>
                 <div className="Evidence1">
                   <h2 className="Evidence">Evidence</h2>
-                  <img src={`http://localhost:1337${item.image.url}`}></img>
+                  <img src={require('./slip.jpg')}></img>
                 </div>
 
                 <div className="Total1">
                   <h2 className="Total">TOTAL</h2>
-                  <div className="price">{item.Prices} ฿</div>
+                  <div className="price">3999 ฿</div>
                 </div>
                 <div>
 

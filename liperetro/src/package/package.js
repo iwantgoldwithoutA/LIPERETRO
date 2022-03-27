@@ -6,13 +6,13 @@ import { Link } from "react-router-dom";
 import ButtonLogin from "../bar/Button-login";
 
 function Package() {
-  const [data, setData] = useState([]);
-  useEffect(async () => {
-    let res = await axios.get("http://localhost:1337/packages");
-    console.log(res);
-    setData(res.data);
+  // const [data, setData] = useState([]);
+  // useEffect(async () => {
+  //   let res = await axios.get("http://localhost:1337/packages");
+  //   console.log(res);
+  //   setData(res.data);
 
-  }, []);
+  // }, []);
   return (
     <>
       <LRbar />
@@ -59,59 +59,80 @@ function Package() {
             <span>S</span>
           </h1>
           <div class="box-container">
+
+                    <div class="box">
+                        <img width={200} src='https://www.chillpainai.com/src/wewakeup/scoop/images/fce7dfb893d9fba720de7afa9274f405d6576fa8.jpg' alt=""/>
+                            <div class="content">
+                                <h3 style={{ color: "#6AB7D6" }}>  Package 1999 </h3>
+                                <p style={{ color: "rgb(68, 68, 68)" }}>In this 1999฿ Package is including with 3 island tour and a free 1 meal at your place
+                feel free to choose what you like with to following Hotel/Motel and Meal.</p>                                
+                                <div class="price-package" style={{ color: "#6AB7D6" }}> 1999 ฿</div>
+                                <a href="package/1999" class="btn">book now</a>                                
+                            </div>
+                    </div>
+                    <div class="box">
+                        <img width={200} src='https://www.chillpainai.com/src/wewakeup/scoop/images/2653e8c3228b8245308f00ad1cffe403c0ce5ea1.jpg' alt=""/>
+                            <div class="content">
+                                <h3 style={{ color: "#6AB7D6" }}>  Package 2999 </h3>
+                                <p style={{ color: "rgb(68, 68, 68)" }}>In this 2999฿ Package is including with 6 island tour and a free 3 meal at your place
+                feel free to choose what you like with to following Hotel/Motel and Meal.</p>                                
+                                <div class="price-package" style={{ color: "#6AB7D6" }}> 2999 ฿</div>
+                                <a href="package/2999" class="btn">book now</a>                                
+                            </div>
+                    </div>
+                    <div class="box">
+                        <img width={200} src='https://www.chillpainai.com/src/wewakeup/scoop/images/c058355a876f88a6a1113b4c7c54b30ceddf4021.jpg' alt=""/>
+                            <div class="content">
+                                <h3 style={{ color: "#6AB7D6" }}>  Package 3999 </h3>
+                                <p style={{ color: "rgb(68, 68, 68)" }}>In this 3999฿ Package is including with 9 island tour and a free 5 meal at your place
+                feel free to choose what you like with to following Hotel/Motel and Meal.</p>                                
+                                <div class="price-package" style={{ color: "#6AB7D6" }}> 3999 ฿</div>
+                                <a href="package/3999" class="btn">book now</a>                                
+                            </div>
+                    </div>
+
+                   
+          </div>
+
+                <div class='back'>
+                   <a href="home" class="btn"> back </a> 
+                </div>
+          
+          {/* <div class="box-container">
             {data.map((item) => {
               console.log(item)
               return (
                 <div class="box">
                   <img
                     width={200}
-                    src={`http://localhost:1337${item.Preview.url}`}
+                    src='https://www.chillpainai.com/src/wewakeup/scoop/images/fce7dfb893d9fba720de7afa9274f405d6576fa8.jpg'
                     alt=""
                   />
                   <div class="content">
-                    <h3 style={{ color: "#6AB7D6" }}>{item.NamePac}</h3>
+                    <h3 style={{ color: "#6AB7D6" }}>Package 1999</h3>
 
                     <p style={{ color: "rgb(68, 68, 68)" }}>
-                      {item.Detail_about_package}
+
                     </p>
 
                     <div class="price-package" style={{ color: "#6AB7D6" }}>
-                      {item.Price} ฿
+                      1999 ฿
                     </div>
-                    {localStorage.getItem("is_auth") ? (
-                      <>
-                        <a href={`packageChoose/${item.id}`} class="btn">
-                          Book now
-                        </a>
-                        {/* <div className='you'></div> */}
-                      </>
+                    <a href={`packageChoose/${item.id}`} class="btn">
+                      Book now
+                    </a> */}
 
-                    ) : (
-                      //  <ButtonLogin/> 
-                      <Link to='/login'>
-                        <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@500&display=swap" rel="stylesheet" />
-                        <button className='btn-login-package'>
-                          Log in
-                        </button>
-                      </Link>
-                    )
-                    }
-
-                  </div>
-                </div>
-              );
-            })}
-            <div class="back">
-              <a href="home" class="btn">
-                {" "}
-                Back{" "}
-              </a>
-            </div>
-          </div>
+                    {/* <div class="back">
+                      <a href="home" class="btn">
+                        {" "}
+                        Back{" "}
+                      </a>
+                    </div> */}
+          {/* </div> */}
         </section>
       </section>
     </>
-  );
+)
 }
 
 export default Package;

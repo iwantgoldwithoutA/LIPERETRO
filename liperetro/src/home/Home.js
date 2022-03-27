@@ -17,9 +17,6 @@ function Home() {
     <>
       <LRbar/>
       <div className="suggest">Suggest</div>
-
-      {console.log(data)}
-
       <div className="cardbox">
         {data.map((item) => {
         //   console.log(item);

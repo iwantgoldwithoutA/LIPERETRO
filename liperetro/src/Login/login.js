@@ -24,35 +24,35 @@ export default function Login() {
 
   });
 
-  const [formData, updateFormData] = useState(initialFormData);
+//   const [formData, updateFormData] = useState(initialFormData);
 
-const handleChange = (event) => {
-    updateFormData({
-      ...formData,
-      [event.target.name]: event.target.value.trim(),
-    });
-  };
+// const handleChange = (event) => {
+//     updateFormData({
+//       ...formData,
+//       [event.target.name]: event.target.value.trim(),
+//     });
+//   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    axios
-      .post(`http://localhost:1337/auth/local`, {
-        identifier: formData.username,
-        password: formData.password,
+//   const handleSubmit = (event) => {
+//     event.preventDefault();
+//     axios
+//       .post(`http://localhost:1337/auth/local`, {
+//         identifier: formData.username,
+//         password: formData.password,
         
-      })
-      .then((res) => {
-        localStorage.setItem("access_token", res.data.jwt);
-        localStorage.setItem("is_auth",true);
-        localStorage.setItem("UsernameDP", res.data.user.username)
-        localStorage.setItem("userID" , res.data.user.id)
-        //update access token
-        axios.defaults.headers["Authorization"] =
-          "Bearer " + localStorage.getItem("access_token");
-          console.log(res)
-        navigate("/home");
-      });
-  };
+//       })
+//       .then((res) => {
+//         localStorage.setItem("access_token", res.data.jwt);
+//         localStorage.setItem("is_auth",true);
+//         localStorage.setItem("UsernameDP", res.data.user.username)
+//         localStorage.setItem("userID" , res.data.user.id)
+//         //update access token
+//         axios.defaults.headers["Authorization"] =
+//           "Bearer " + localStorage.getItem("access_token");
+//           console.log(res)
+//         navigate("/home");
+//       });
+//   };
 
   return (
     <Box className='backgrand1'>
@@ -75,7 +75,7 @@ const handleChange = (event) => {
               alignItems: 'center',
             }}
           >
-            <Box className='from-login' component="form" onSubmit={handleSubmit} noValidate>
+            <Box className='from-login' component="form"  noValidate>
             <Typography fontFamily={'Mitr'} variant="h6"><label className='Username' htmlFor='name'><h4>Username : </h4></label>
             </Typography>
               {/* <TextField
@@ -90,7 +90,7 @@ const handleChange = (event) => {
                 autoFocus
                 sx={{ mb: 2 ,backgroundColor: 'ActiveBorder' }}
               /> */}
-               <input type="text4" id="fname2" name="username" className="fname2" placeholder="Username"value={formData.username} onChange={handleChange} />
+               <input type="text4" id="fname2" name="username" className="fname2" placeholder="Username" />
               <Typography fontFamily={'Mitr'} variant="h6"><label className='password' htmlFor='password'><h4>Password : </h4></label>
               </Typography>
               {/* <TextField
@@ -104,11 +104,11 @@ const handleChange = (event) => {
                 autoComplete="current-password"
                 sx={{ backgroundColor: 'ActiveBorder' }}
               /> */}
-              <input type="password" id="fname1" name="password" className="fname1" placeholder="Password" value={formData.password} onChange={handleChange} />
+              <input type="password" id="fname1" name="password" className="fname1" placeholder="Password" />
               <Button
                 type="submit"
-                fullWidth
-                onSubmit={handleSubmit}
+                fullWidth 
+                href='home'               
                 // variant="contained"
                 sx={{ mt: 4, mb: 2, background: '#e4fcfd',color: '#6ab7d6' }}>
                 <Typography fontFamily={'Mitr'} variant="h6">
