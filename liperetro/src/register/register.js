@@ -29,32 +29,32 @@ export default function Register() {
 
 
     });
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
 
-        let url = "http://localhost:1337/users";
+    //     let url = "http://localhost:1337/users";
 
-        fetch(url, {
+    //     fetch(url, {
 
-            method: "POST",
+    //         method: "POST",
 
-            headers: { "Content-type": "application/json" },
+    //         headers: { "Content-type": "application/json" },
 
-            body: JSON.stringify(register),
+    //         body: JSON.stringify(register),
 
-        })
+    //     })
 
-            .then((response) => {
+    //         .then((response) => {
 
-                // fetchHeros();
+    //             // fetchHeros();
 
-                setRegister({ username: "", email: "", password: "" ,confirmed:false})
+    //             setRegister({ username: "", email: "", password: "" ,confirmed:false})
 
-            })
+    //         })
 
-            .catch((err) => console.log(err));
+    //         .catch((err) => console.log(err));
 
-    };
+    // };
 
     return (
         <Box className='backgrand2'>
@@ -68,7 +68,7 @@ export default function Register() {
                         <Button className='login' sx={{ ml: 5, color: '#6ab7d6' }} ><h4><Link href="login" underline="none" sx={{ color: '#6ab7d6' }} ><Typography fontFamily={'Mitr'} variant="h5">LOGIN</Typography></Link></h4></Button>
                         <Button disabled sx={{ ml: 2, color: '#6ab7d6' }} ><h1>|</h1></Button>
 
-                        <Button className='register' sx={{ ml: 1, color: '#6ab7d6' }} ><h4><Link href="register" underline="none" sx={{ color: '#6ab7d6' }}><Typography fontFamily={'Mitr'} variant="h5">REGISTER</Typography></Link></h4></Button>
+                        <Button className='register' sx={{ ml: 0, color: '#6ab7d6' }} ><h4><Link href="register" underline="none" sx={{ color: '#6ab7d6' }}><Typography fontFamily={'Mitr'} variant="h5">REGISTER</Typography></Link></h4></Button>
                     </Box>
                     <Box className='card1' >
                         <Box
@@ -85,26 +85,36 @@ export default function Register() {
                                     <Typography fontFamily={'Mitr'} variant="h6"><label className='Username' htmlFor='name'>Username : </label>
                                     </Typography >
 
-                                    <input type="text6" id="fname2" name="fname2" className="fname2" placeholder="Username" value={register.username} onChange={(e) => setRegister({ ...register, username: e.target.value })} />
+                                    <input type="text6" id="fname2" name="fname2" className="fname2" placeholder="Username" value={register.username} />
 
 
                                     <Typography fontFamily={'Mitr'} variant="h6"><label className='Email' htmlFor='email'>Email : </label>
                                     </Typography>
 
-                                    <input type="text7" id="fname" name="fname" className="fname" placeholder="Email" value={register.email} onChange={(e) => setRegister({ ...register, email: e.target.value })} />
+                                    <input type="text7" id="fname" name="fname" className="fname" placeholder="Email" value={register.email} />
                                     <Typography fontFamily={'Mitr'} variant="h6"><label className='password1' htmlFor='password'>Password : </label>
                                     </Typography>
 
-                                    <input type="password" id="fname1" name="fname1" className="fname1" placeholder="Password" value={register.password} onChange={(e) => setRegister({ ...register, password: e.target.value })} />
+                                    <input type="password" id="fname1" name="fname1" className="fname1" placeholder="Password" value={register.password} />
                                     <div class="form-check" >
-                                        <input class="form-check-input" type="checkbox"  id="flexCheckDefault" value={true} checked={register.confirmed} onClick={(e) => setRegister({ ...register, confirmed: e.target.value })} ></input>
-                                            <label class="form-check-label" for="flexCheckDefault">
-                                                Confirm password
-                                            </label>
+                                        <input class="form-check-input" type="checkbox" id="flexCheckDefault" value={true} checked={register.confirmed}  ></input>
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Confirm password
+                                        </label>
                                     </div>
 
+                                    <Button
+                                        type="submit"
+                                        fullWidth
+                                        href='login'
+                                        // variant="contained"
+                                        sx={{ mt: 4, mb: 2, background: '#e4fcfd', color: '#6ab7d6' }}>
+                                        <Typography fontFamily={'Mitr'} variant="h6">
+                                            CONTINUE
+                                        </Typography>
 
-                                    <input  type="submit" href="/login" value="CONTNUE" onClick={handleSubmit} ></input>
+                                    </Button>
+                                    {/* <input type="submit" href="/login" value="CONTNUE" ></input> */}
                                 </form>
                             </Box>
                         </Box>
