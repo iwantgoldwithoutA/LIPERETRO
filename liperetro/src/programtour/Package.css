@@ -13,6 +13,16 @@
     border-radius: 20px;
 }
 
+.container img {
+    width: 50%;
+    height: auto;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    border-radius: 20px;
+    align-items: center;
+}
+
 .picture {
     background-image: url("./pics/peangpor.jpg");
 }
@@ -39,6 +49,13 @@
     text-decoration: none;
     border-radius: .5rem;
     float: right;
+    font-family: 'Mitr', sans-serif;
+}
+
+.packname {
+    color: var(--primary);
+    padding: 6px 20px;
+    margin-top: 10px;
     font-family: 'Mitr', sans-serif;
 }
 
@@ -105,12 +122,29 @@ select{
         height: 40vh;
         margin-left: 10%;
     }
+    .container img {
+        width: 70%;
+        height: auto;
+    }
 }
-@media (max-width:440px){   
+
+@media (max-width:960px){
+    .container img {
+        width: 80%;
+        height: auto;
+    }
+}
+
+@media (max-width:480px){   
     .pics {
         width: 80%;
         height: 30vh;
         margin-left: 10%;
+    }
+
+    .container img {
+        width: 100%;
+        height: auto;
     }
 
     .btn-booking,

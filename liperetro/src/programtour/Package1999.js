@@ -1,16 +1,10 @@
-import React from 'react';
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import { Link } from "react-router-dom";
-import { Radio, RadioGroup, FormControl, FormControlLabel, FormLabel } from "@mui/material";
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControl from '@mui/material/FormControl';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormLabel from '@mui/material/FormLabel';
 import LRbar from "../bar/Bar";
-import './page.css';
 import './Package.css';
-import { pink } from '@mui/material/colors';
+import food from './food';
+import hotel1 from './hotel1';
+import { FormControl } from 'react-bootstrap';
 
 function Package1999() {
 
@@ -20,6 +14,30 @@ function Package1999() {
         setValue(event.target.value);
     };
 
+    const [foodState, setFoodState] = useState();
+
+    const onChangeComboBox = (e) => {
+        const selectedId = e.target.value;
+        const selectedFoodState = food.filter((d) => d.id == selectedId)[0];
+        setFoodState(selectedFoodState);
+    };
+
+    useEffect(() => {
+        setFoodState(food[1]);
+    }, []);
+
+    const [hotelState, setHotelState] = useState();
+
+    const onChangeComboBox1= (e) => {
+        const selectedId = e.target.value;
+        const selectedHoteltate = hotel1.filter((d) => d.id == selectedId)[0];
+        setHotelState(selectedHoteltate);
+    };
+
+    useEffect(() => {
+        setHotelState(hotel1[1]);
+    }, []);
+
     return (
         <>
             <LRbar />
@@ -28,67 +46,69 @@ function Package1999() {
                 <br />
                 <div className="pics">
                     <img src='https://www.chillpainai.com/src/wewakeup/img_hotels/3211/1487070806-_MG_9750.JPG' />
-                </div>
-
+                </div><br/>
+                <h2 className='packname'>Package 1999</h2>
                 <p className='description'>
                     In this 1999฿ Package is including with 3 island tour and a free 1 meal at your place
                     feel free to choose what you like with to following Hotel/Motel and Meal.
                 </p>
 
-                <form className='hotel-form' >
+                    <form className='hotel-form'>
 
-                    <h2>Hotel</h2>
-                    {/* <div className="container"> */}
-                    <select onChange={(e) => { setBook({ ...book, hotels: e.target.value }) }}
-                        className="custom-select"
-                        value={hotel?.id}
+                        <h2>Hotel</h2>
+                        <div className="container">
+                            <select
+                                className="custom-select"
+                                value={hotelState?.id}
+                                onChange={(e) => {
+                                    onChangeComboBox1(e);
+                                }}
+                            >
+                                {hotel1.map((d) => (
+                                    <option key={d.id} value={d.id}>
+                                        {d.hotel}
+                                    </option>
+                                ))}
+                            </select><br/><br/>
+                            {hotelState ? (
+                                <img src={hotelState?.image} width="100%" height="500px" />
+                            ) : (
+                                ""
+                            )}
+                        </div>
 
-                    >
-                        {hotel.map((item) => (
-                            <option key={item.id} value={item.id} >
-                                {item.Name}
-                            </option>
+                    </form>
 
-                        ))}
-                    </select>
-                    {hotel.id ? (
-                        <img
-                            src={`http://localhost:1337${hotel.Image.url}`}
-                            width="100%"
-                            height="100%" />
-                    ) : (""
-                    )}
-                    {/* {hotel.id ? (
-                            <img
-                            src={`http://localhost:1337${hotel.Image.url}`}
-                            width="100%"
-                            height="100%"/>
-                        ) : ( ""
-                            )} */}
-                    {/* </div> */}
+                    <br />
 
-                    {/* </form> */}
+                    <form className='meal-form'>
 
-                    <br /><br />
+                        <h2>Meal</h2>
+                        <div className="container">
+                            <select
+                                className="custom-select"
+                                value={foodState?.id}
+                                onChange={(e) => {
+                                    onChangeComboBox(e);
+                                }}
+                            >
+                                {food.map((d) => (
+                                    <option key={d.id} value={d.id}>
+                                        {d.restaurant}
+                                    </option>
+                                ))}
+                            </select><br/><br/>
+                            {foodState ? (
+                                <img src={foodState?.image} />
+                            ) : (
+                                ""
+                            )}
+                        </div>
+                    </form>
 
-                    {/* <form className='meal-form'> */}
-
-                    <h2>Meal</h2>
-                    {/* <div className="container"> */}
-                    <select onChange={(e) => setBook({ ...book, foods: e.target.value })}
-                        className="custom-select"
-                        value={food?.id}
-
-                    >
-                        {food.map((item) => (
-                            <option key={item.id} value={item.id}>
-                                {item.Coursename}
-                            </option>
-                        ))}
-                    </select>
                     <h1 className='topic'>
                         Date
-                        <FormControl value={book.Date} onChange={(e) => setBook({ ...book, Date: e.target.value })} type="date" required></FormControl>
+                        <FormControl type="date" required style={{color:'rgb(68, 68, 68)'}}></FormControl>
                     </h1>
 
 
@@ -97,19 +117,18 @@ function Package1999() {
                     </h1>
 
 
-                    <input type="text" className='additional' rows="2" value={book.Additional} onChange={(e) => setBook({ ...book, Additional: e.target.value })} required />
+                    <input type="text" className='additional' rows="2" required />
 
                     <h1 className='topic'>
                         Person
                     </h1>
 
-                    <input min="1" max="10" className='person' type="number" value={book.Person} onChange={(e) => setBook({ ...book, Person: e.target.value })} />
-                    <div className='price-booking' value={book.Prices = pack.Price * book.Person} onChange={(e) => setBook({ ...book, Prices: e.target.value })}>Total : {pack.Price * book.Person} Baht</div>
-                    {/* <a value={pack.Price*book.Person} onChange={(e) => setBook({ ...book, Prices: e.target.value })}>{pack.Price*book.Person}</a> */}
+                    <input min="1" max="10" className='person' type="number" required/>
+                    <div className='price-booking' >Total : *** Baht</div>
+                    {/* <a ></a> */}
 
-                </form>
 
-                <Link state={{ book: book }} to="/payment" className="btn-booking">Booking</Link>
+                {/* <Link state={{ book: book }} to="/payment" className="btn-booking">Booking</Link> */}
                 <a href='/package' className='btn-back'>Back</a>
 
 
