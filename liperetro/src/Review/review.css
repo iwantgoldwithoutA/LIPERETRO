@@ -111,8 +111,8 @@ input[type=submit] {
 }
 
 .box-review {
-    position:fixed;
-    top: 64vh;
+    position: fixed;
+    top: 68vh;
     background-color: #6AB7D6;
 }
 
@@ -122,7 +122,7 @@ input[type=submit] {
 
 @media (max-width:440px){
     .box-review {
-        position:fixed;
+        position: fixed;
         top: 69vh;
         background-color: #6AB7D6;
     }
@@ -137,3 +137,19 @@ input[type=submit] {
         
     }
 }
+
+@media (max-height:899px){
+    .box-review {
+        position: fixed;        
+        margin-bottom: 0;
+        background-color: #6AB7D6;
+    }
+}
+
+/* @media (max-height:670px){
+    .box-review {
+        position: fixed;
+        top: 60vh;
+        background-color: #6AB7D6;
+    }
+} */

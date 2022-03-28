@@ -45,7 +45,7 @@ function Package1999() {
             <div className='backgrand-status2'>
                 <br />
                 <div className="pics">
-                    <img src='https://www.chillpainai.com/src/wewakeup/img_hotels/3211/1487070806-_MG_9750.JPG' />
+                    <img src='https://www.chillpainai.com/src/wewakeup/scoop/images/fce7dfb893d9fba720de7afa9274f405d6576fa8.jpg' />
                 </div><br/>
                 <h2 className='packname'>Package 1999</h2>
                 <p className='description'>
@@ -105,10 +105,12 @@ function Package1999() {
                             )}
                         </div>
                     </form>
-
+                    
+                    <div className='info-form'>
                     <h1 className='topic'>
                         Date
-                        <FormControl type="date" required style={{color:'rgb(68, 68, 68)'}}></FormControl>
+                        <br/>
+                        <FormControl type="date" required style={{color:'rgb(68, 68, 68)'}}  class="form-control-lg" fontFamily='Mitr'></FormControl>
                     </h1>
 
 
@@ -122,13 +124,13 @@ function Package1999() {
                     <h1 className='topic'>
                         Person
                     </h1>
-
+                    
                     <input min="1" max="10" className='person' type="number" required/>
                     <div className='price-booking' >Total : *** Baht</div>
                     {/* <a ></a> */}
+                    </div>
 
-
-                {/* <Link state={{ book: book }} to="/payment" className="btn-booking">Booking</Link> */}
+                <Link to="/payment" className="btn-booking">Booking</Link>
                 <a href='/package' className='btn-back'>Back</a>
 
 
