@@ -8,16 +8,16 @@ import axios from "axios";
 import ButtonLogin from "../bar/Button-login";
 
 export default function Statuspackage() {
-  const [data, setData] = useState([]);
-  useEffect(async () => {
-    let res = await axios.get(
-      `http://localhost:1337/bookings?users_permissions_users=${localStorage.getItem(
-        "userID"
-      )}`
-    );
-    setData(res.data);
-    // console.log(res)
-  }, []);
+  // const [data, setData] = useState([]);
+  // useEffect(async () => {
+  //   let res = await axios.get(
+  //     `http://localhost:1337/bookings?users_permissions_users=${localStorage.getItem(
+  //       "userID"
+  //     )}`
+  //   );
+  //   setData(res.data);
+  //   // console.log(res)
+  // }, []);
 
   return (
     <>
@@ -34,7 +34,7 @@ export default function Statuspackage() {
                   <div className="Box-Usename2">
                     <AccountCircleIcon fontSize="large"></AccountCircleIcon>
                     <h2 className="Usename">
-                      {localStorage.getItem("UsernameDP")}
+                      Mark
                     </h2>
                   </div>
                   <h2 className="Package-status">Package 3999</h2>
