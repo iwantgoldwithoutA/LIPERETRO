@@ -51,7 +51,7 @@ function Payment() {
           NEXT
         </Button> */}
         <div class='back-payment'>
-            <a href="booking" class="btn"> Back </a> 
+            <a href="javascript: history.go(-1)"> Back </a> 
         </div>
         <form class='back-payment'>
             <Link to="/upload" class="btn"> Next </Link>

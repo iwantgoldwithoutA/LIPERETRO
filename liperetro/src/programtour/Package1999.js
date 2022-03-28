@@ -11,12 +11,6 @@ function Package1999() {
     const [price,setPrice] = useState(1999);
     const [person,setPerson] = useState(null);
 
-    // const [value, setValue] = useState('Bann Peangpor Hostel');
-
-    // const handleChange = (event) => {
-    //     setValue(event.target.value);
-    // };
-
     const [foodState, setFoodState] = useState();
 
     const onChangeComboBox = (e) => {
@@ -128,9 +122,9 @@ function Package1999() {
                         Person
                     </h1>
                     
-                    <input min="1" max="10" className='person' type="number" value={person} onChange={() => setPerson({person.value})} required/>
-                    <div className='price-booking' >Total : {person} Baht</div>
-                    {/* <a ></a> */}
+                    <input min="1" max="10" className='person' type="number" value={person} onChange={(e) => setPerson(e.target.value)} required/>
+                    <div className='price-booking' >Total : {price*person} Baht</div>
+
                     </div>
                     <br/>
                 <Link to="/payment" className="btn-booking">Booking</Link>

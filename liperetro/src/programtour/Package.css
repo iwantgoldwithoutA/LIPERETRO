@@ -23,10 +23,6 @@
     align-items: center;
 }
 
-.picture {
-    background-image: url("./pics/peangpor.jpg");
-}
-
 .hotel-form,
 .meal-form,
 .info-form {

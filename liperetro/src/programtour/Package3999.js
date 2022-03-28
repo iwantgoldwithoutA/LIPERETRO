@@ -8,11 +8,8 @@ import { FormControl } from 'react-bootstrap';
 
 function Package3999() {
 
-    const [value, setValue] = useState('Bann Peangpor Hostel');
-
-    const handleChange = (event) => {
-        setValue(event.target.value);
-    };
+    const [price,setPrice] = useState(3999);
+    const [person,setPerson] = useState(null);
 
     const [foodState, setFoodState] = useState();
 
@@ -124,9 +121,8 @@ function Package3999() {
                         Person
                     </h1>
                     
-                    <input min="1" max="10" className='person' type="number" required/>
-                    <div className='price-booking' >Total : *** Baht</div>
-                    {/* <a ></a> */}
+                    <input min="1" max="10" className='person' type="number" valuw={person} onChange={(e) => setPerson(e.target.value)} required/>
+                    <div className='price-booking' >Total : {price*person} Baht</div>
                     </div>
 
                 <Link to="/payment" className="btn-booking">Booking</Link>
