@@ -41,11 +41,12 @@
     font-size:1.7rem;
     background-color: #6AB7D6;
     color:#fff;
-    padding:0.5rem 2rem;
+    padding:.5rem 2rem;
     text-decoration: none;
     border-radius: .5rem;
     float: right;
     font-family: 'Mitr', sans-serif;
+    margin-right: 15px;
 }
 
 .packname {
@@ -89,7 +90,7 @@ select{
 }
 
 .backgrand-status2{
-    height: 240vh;
+    height: 230vh;
     width: 100vw;
     background-color: #FAFAEB;
 }
