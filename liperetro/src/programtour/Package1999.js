@@ -129,7 +129,7 @@ function Package1999() {
                     <div className='price-booking' >Total : *** Baht</div>
                     {/* <a ></a> */}
                     </div>
-
+                    <br/>
                 <Link to="/payment" className="btn-booking">Booking</Link>
                 <a href='/package' className='btn-back'>Back</a>
 

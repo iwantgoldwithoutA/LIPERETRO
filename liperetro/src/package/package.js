@@ -74,8 +74,7 @@ function Package() {
                         <img width={200} src='https://www.chillpainai.com/src/wewakeup/scoop/images/2653e8c3228b8245308f00ad1cffe403c0ce5ea1.jpg' alt=""/>
                             <div class="content">
                                 <h3 style={{ color: "#6AB7D6" }}>  Package 2999 </h3>
-                                <p style={{ color: "rgb(68, 68, 68)" }}>In this 2999฿ Package is including with 6 island tour and a free 3 meal at your place
-                feel free to choose what you like with to following Hotel/Motel and Meal.</p>                                
+                                <p style={{ color: "rgb(68, 68, 68)" }}>In this 2999฿ Package is including with 6 island tours, 3 outdoor activities and free 2 meals at your place feel free to choose what you like with to following Hotel/Motel and Meal.</p>                                
                                 <div class="price-package" style={{ color: "#6AB7D6" }}> 2999 ฿</div>
                                 <a href="package/2999" class="btn">book now</a>                                
                             </div>
@@ -84,8 +83,7 @@ function Package() {
                         <img width={200} src='https://www.chillpainai.com/src/wewakeup/scoop/images/c058355a876f88a6a1113b4c7c54b30ceddf4021.jpg' alt=""/>
                             <div class="content">
                                 <h3 style={{ color: "#6AB7D6" }}>  Package 3999 </h3>
-                                <p style={{ color: "rgb(68, 68, 68)" }}>In this 3999฿ Package is including with 9 island tour and a free 5 meal at your place
-                feel free to choose what you like with to following Hotel/Motel and Meal.</p>                                
+                                <p style={{ color: "rgb(68, 68, 68)" }}>In this 3999฿ Package is including with 9 island tours, 3 outdoor activities, camping and a free 1 meal at your place feel free to choose what you like with to following Hotel/Motel and Meal.</p>                                
                                 <div class="price-package" style={{ color: "#6AB7D6" }}> 3999 ฿</div>
                                 <a href="package/3999" class="btn">book now</a>                                
                             </div>

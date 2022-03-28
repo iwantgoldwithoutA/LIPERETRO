@@ -10,12 +10,7 @@ import { Box } from '@mui/system';
 import LRbar from '../bar/Bar';
 import { Link, useLocation } from 'react-router-dom';
 
-function Payment() {  
-
-  
-  const locate = useLocation();
-  const {book} = locate.state
-  console.log(book)
+function Payment() {
 
   const [selectedlogo,setSelectedlogo] = useState(null); 
 
@@ -59,7 +54,7 @@ function Payment() {
             <a href="booking" class="btn"> Back </a> 
         </div>
         <form class='back-payment'>
-            <Link state={{book:book}} to="/upload" class="btn"> Next </Link>
+            <Link to="/upload" class="btn"> Next </Link>
             
         </form>
        

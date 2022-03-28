@@ -90,7 +90,7 @@ select{
 }
 
 .backgrand-status2{
-    height: 230vh;
+    height: 320vh;
     width: 100vw;
     background-color: #FAFAEB;
 }
@@ -161,7 +161,7 @@ select{
     }
 
     .backgrand-status2{
-        height: 165vh;
+        height: 260vh;
         width: 100vw;
         background-color: #FAFAEB;
     }

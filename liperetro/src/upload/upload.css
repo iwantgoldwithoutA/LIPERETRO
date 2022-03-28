@@ -1,8 +1,8 @@
-.App {
+.upload {
     /* font-family: sans-serif; */
     text-align: center;
     background-color: #fafaeb;
-    height: 110vh;
+    height: 70vh;
     
   }
   .next-app{
@@ -11,7 +11,10 @@
     padding-left: 50px; 
     padding-right: 50px;
     padding: 2rem;
-        
+    margin-bottom: 50px;
+    padding-top: 0;
+    background-color: #fafaeb;
+    height: 100px;   
 }
 
 .upload {

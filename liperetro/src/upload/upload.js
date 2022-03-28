@@ -8,60 +8,34 @@ import { useLocation } from "react-router-dom";
 
 
 export default function Upload() {
+  const [images, setImages] = useState([]);
+  const [imageURLs, setImageURLs] = useState([]);
+
+  useEffect(() => {
+    if (images.length < 1) return;
+    const newImageUrls = [];
+    images.forEach((image) => newImageUrls.push(URL.createObjectURL(image)));
+    setImageURLs(newImageUrls);
+  }, [images]);
+
+  function onImageChange(e) {
+    setImages([...e.target.files]);
+  }
+
+  console.log("Images : ", images);
+  console.log("imageURLs : ", imageURLs);
+
   const [close, setClose] = useState(false)
 
 
   const [files,setFiles] = useState()
 
-  const locate = useLocation();
-  const {book} = locate.state
-  console.log(book)
-
-
-  const uploadImage = async (e) => {
-    e.preventDefault();
-    setClose(true)
-    const formData = new FormData()
-
-    formData.append('files', files[0])
-
-    axios.post("http://localhost:1337/upload", formData)
-    .then((response)=>{
-
-      const imageId = response.data[0].id
-
-      axios.post("http://localhost:1337/bookings",{
-        image:imageId,
-        Additional: book.Additional,
-        Date: book.Date,
-        Person: book.Person,
-        Prices: book.Prices,
-        foods: book.foods,
-        hotels: book.hotels,
-        packages: book.packages,
-        status: "Pending please wait..",
-        users_permissions_users: localStorage.getItem('userID')
-        
-
-      }).then((response)=>{
-        //handle success
-      }).catch((error)=>{
-          //handle error
-        })
-    }).catch((error)=>{
-        //handle error
-    })
-}
-
-  useEffect(() => {
-    
-  },[close])
   return (
     <>
     <LRbar/>
     { console.log()}
     <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@500&display=swap" rel="stylesheet"/>
-    <div className="App">
+    <div className="upload">
       <CssBaseline />
       <div className="text">
         Payment : Upload
@@ -72,16 +46,23 @@ export default function Upload() {
       <div className="upload">
 
         <form >
-        <input 
+        
+        {/* <input 
           onChange={(e)=>setFiles(e.target.files)} 
-          type="file"/>
-        <input onClick={uploadImage} type="submit"disabled={close} value="Submit"/>
-         
-        </form>
+          type="file"/> */}
+        
+        {imageURLs.map((imageSrc, idx) => (
+        <img key={idx} width="300"  src={imageSrc} />
+      ))}
+
+      <div className="uplond">
+        <input type="file" multiple accept="image/*" onChange={onImageChange} />
+      </div>
+      </form>
         
       </div>
 
-      <Box className="next-app">
+      <div className="next-app">
         {/* <Button variant='contained' style={{maxWidth: '100px', maxHeight: '50px', minWidth: '100px', minHeight: '50px', backgroundColor: '#6AB7D6'}}> 
         BACK
         </Button> */}
@@ -95,7 +76,7 @@ export default function Upload() {
         {/* <Button variant='contained' style={{maxWidth: '100px', maxHeight: '50px', minWidth: '100px', minHeight: '50px' , backgroundColor: '#6AB7D6'}}>
           NEXT
         </Button> */}
-      </Box>
+      </div>
     </div>
     </>
   );
