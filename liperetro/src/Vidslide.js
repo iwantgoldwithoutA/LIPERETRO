@@ -28,7 +28,7 @@ const Videoslide = () => {
         content="width=device-width, initial-scale=1.0"
       />
       <link
-        href="http://fonts.cdnfonts.com/css/bukhari-script"
+        href="https://fonts.cdnfonts.com/css/bukhari-script"
         rel="stylesheet"
       />
       <link
